@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <style>
+        li.L0,
+        li.L1,
+        li.L2,
+        li.L3,
+        li.L5,
+        li.L6,
+        li.L7,
+        li.L8 {
+            list-style-type: decimal !important;
+        }
+
+        pre {
+            padding: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>Bases de programmation</h1>
+        </div>
+        <div id="sideheader"></div>
+        <div id="left_column">
+            <div class="left_column_boxes">
+                <h4>Sessions</h4>
+                <div id="navcontainer">
+                    <ul id="navlist">
+                        <li><a href="../index.html">Accueil</a></li>
+                        <li><a href="../Sessions/programmation-jeux-video.html">Jeux vidéo</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="left_column_boxes">
+                <h4>Pages</h4>
+                <div id="navcontainer">
+                    <ul id="navlist">
+                        <li><a href="../Sessions/programmation-jeux-video.html">Description</a></li>
+                        <ul style="margin-left: 10px;">
+                            <li><a href="../Seances/bases-javascript.html">Javascript</a></li>
+                            <ul style="margin-left: 10px;">
+                                <li><a href="../Seances/js-exemple1.html">1er exemple</a></li>
+                                <li><a href="../Seances/js-variables.html">les variables</a></li>
+                                <li><a href="../Seances/js-conditionnelles.html">les conditionnelles</a></li>
+                                <li><a href="../Seances/js-tableaux.html">les tableaux</a></li>
+                                <li><a href="../Seances/js-boucles.html">les boucles</a></li>
+                                <li><a href="../Seances/js-fonctions.html">les fonctions</a></li>
+                                <li><a href="../Seances/js-objets.html">les objets</a></li>
+                            </ul>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+            <h3>Un exemple simple</h3>
+            <p>Une première page web</p>
+            En utilisant l'éditeur de texte <em>Bracket</em> (ou tout autre éditeur de texte pur, pas Word ou similaire), faire un nouveau fichier dans lequel vous écrirez :
+            <pre><code class="prettyprint linenums:1">&lt;!doctype html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+            &lt;title&gt;Premieres lignes javascript&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;h1&gt;Débuter avec Javascript&lt;/h1&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;</code></pre>
+            Sauvegardez (enregistrez) ce fichier sur le bureau en lui donnant le nom <b>test1.html</b><br />
+            Ouvrir le fichier avec le navigateur web (double-cliquez sur le fichier sur le bureau).<br />
+            <b>Quelques explications :</b>
+            <ul>
+                <li>Ligne 1, on spécifie le formalisme utilisé. Ici du html dans sa 5ème version.</li>
+                <li>Lignes 2 et 9, toute la spécification de la page se retrouve entre ces deux balises</li>
+                <li>Lignes 3 et 5, encapsulation de l'en-tête de la page</li>
+                <li>Ligne 4, le titre de la page (affiché dans l'onglet du navigateur)</li>
+                <li>Lignes 6 et 8, encapsulation du corps de la page : ce qui s'affichera dans la fenêtre du navigateur</li>
+                <li>Ligne 7, un titre de niveau 1</li>
+            </ul>
+            <p>Avec un mini-script</p>
+            Modifiez le fichier html de la façon suivante :
+            <pre><code class="prettyprint linenums:1">&lt;!doctype html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+            &lt;title&gt;Premieres lignes javascript&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;h1&gt;Débuter avec Javascript&lt;/h1&gt;
+            &lt;script&gt;
+                document.write("j'affiche un texte dans la page");
+            &lt;/script&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;</code></pre>
+            Actualisez (rechargez) le fichier dans le navigateur web.<br />
+            <b>Quelques explications :</b>
+            <ul>
+                <li>Lignes 8 et 10, encapsulation des scripts de la page</li>
+                <li>Ligne 9, le code source du script :
+                    <ul>
+                        <li><b>document</b> est un objet qui représente la page web</li>
+                        <li><b>write</b> est une action permettant d'écrire du texte dans la page</li>
+                        <li><b>"j'affiche un texte dans la page"</b> représente les paramètres de l'action (le texte à écrire)</li>
+                    </ul>
+                </li>
+                <li>Le fait d'écrire <b>document.write</b> explicite le fait de dire : je demande à utiliser l'action write de l'objet document.</li>
+            </ul>
+            <p>Avec un mini-script externe</p>
+            Créez un nouveau fichier texte contenant :
+            <pre><code class="prettyprint linenums:1">document.write("j'affiche un texte dans la page");</code></pre>
+            Sauvegardez (enregistrez) ce fichier sur le bureau en lui donnant le nom <b>test1.js</b><br />
+            Modifiez le fichier html de la façon suivante :
+            <pre><code class="prettyprint linenums:1">&lt;!doctype html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+            &lt;title&gt;Premieres lignes javascript&lt;/title&gt;
+            &lt;script src="test1.js"&gt;&lt;/script&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;h1&gt;Débuter avec Javascript&lt;/h1&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;</code></pre>
+            Actualisez (rechargez) le fichier dans le navigateur web.<br />
+            <b>Quelques explications :</b>
+            <ul>
+                <li>Ligne 5, encapsulation des scripts de la page depuis un fichier externe</li>
+            </ul>
+        </div>
+        <div id="footer"></div>
+    </div>
+</body>
+
+</html>
