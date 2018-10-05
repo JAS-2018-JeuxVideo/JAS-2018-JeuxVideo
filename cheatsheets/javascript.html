@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+    <link rel="stylesheet" type="text/css" href="/css/cheatsheet.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="content">
+            <h3><a title="javascript"></a>Javascript</h3>
+
+            <table>
+                <tr>
+                    <td>
+
+                        <div id="codecontainer">
+                            <pre class="prettyprint linenums:1">
+/**
+ *   script dans la page
+ */
+
+&lt;script type="text/javascript"&gt;
+...
+&lt;/script&gt;
+
+/**
+ *   fichier javascript externe
+ */
+
+&lt;script src="filename.js"&gt;&lt;/script&gt;
+
+/**
+ *   Entrées/Sorties
+ */
+
+console.log(a);             // write to the browser console
+document.write(a);          // write to the HTML
+alert(a);                   // output in an alert box
+confirm("Really?");         // yes/no dialog
+prompt("Your age?","0");    // input dialog.
+
+/**
+ *   Commentaires
+ */
+
+/* Multi line
+   comment */
+// One line
+</pre>
+                        </div>
+
+                        <div id="codecontainer">
+                            <pre class="prettyprint linenums:1">
+/**
+ *   Déclaration
+ */
+
+var a;                          // variable
+const PI = 3.14;                // constante
+var a = Expr;                   // variable initialisée
+
+/**
+ *   Valeurs
+ */
+
+false, true                     // boolean
+18, 3.14, 0b10011, 0xF6, NaN    // number
+"flower", 'John'                // string
+[ ... ]                         // array
+{ ... }                         // JSON object
+undefined, null , Infinity      // special
+
+/**
+ *   Mathématique
+ */
+
+Expr + Expr     // addition
+Expr - Expr     // soustraction
+Expr * Expr     // multiplication
+Expr / Expr     // division
+Expr % Expr     // reste de la division
+
+/**
+ *   Comparaison
+ */
+
+Expr == Expr        // égalité
+Expr != Expr        // différent
+Expr &lt; Expr         // inférieur
+Expr &lt;= Expr        // inférieur ou égal
+Expr &gt; Expr         // supérieur
+Expr &gt;= Expr        // supérieur ou égal
+
+/**
+ *   Logique
+ */
+
+Expr && Expr        // et
+Expr || Expr        // ou
+! Expr              // non
+</pre>
+                        </div>
+
+                        <div id="codecontainer">
+                            <pre class="prettyprint linenums:1">
+/**
+ *   If ...
+ */
+
+if ( CONDITION ) {
+    ...                 // done if cond is true
+}
+
+
+/**
+ *   If ... Else ...
+ */
+
+if ( CONDITION ) {
+    ...                 // done if cond is true
+} else {
+    ...                 // done if cond is false
+}
+
+/**
+ *   Switch Statement
+ */
+
+switch ( EXPR ) {
+    case VALEUR1:               // if EXPR == VALEUR1
+        ...
+        break;
+    case VALEUR2 || VALEUR3:    // if EXPR == VALEUR2
+        ...                     // or EXPR == VALEUR3
+        break;
+    ...
+    default:                    // else...
+        ...
+}
+
+
+</pre>
+                        </div>
+                        <div id="codecontainer">
+                            <pre class="prettyprint linenums:1">
+
+/**
+ *   While Loop
+ */
+
+while ( CONDITION ) {
+    ...
+}
+// exécute le code tant que la condition est vraie
+// peut ne pas rentrer dans la boucle
+
+/**
+ *   Do While Loop
+ */
+
+do {
+    ...
+} while ( condition )
+// exécute le code tant que la condition est vraie
+// passe au moins une fois dans la boucle
+
+/**
+ *   For Loop
+ */
+
+for ( INIT ; COND ; INCR ) {
+    ...
+}
+// commence par exécuter INIT
+// puis exécute le code un certain nombre de fois
+// en exécutant INCR à chaque tour
+
+for ( var NOM in OBJET ) {
+    ...
+}
+// exécute le code pour chaque attribut de OBJET
+// NOM prendra la valeur de chaque attribut successivement
+
+/**
+ *   Break
+ */
+
+BOUCLE {
+    ...
+    break;          // arrète l'exécution de la boucle
+    ...
+}
+
+/**
+ *   Continue
+ */
+
+BOUCLE {
+    ...
+    continue;       // arrète l'exécution de ce tour de boucle
+    ...
+}
+
+</pre>
+                        </div>
+
+                    <!--</td>
+                    <td>-->
+
+                        <p>Fonctions</p>
+
+                        <div id="codecontainer">
+                            <pre class="prettyprint linenums:1">
+/**
+ *   Définition nommée
+ */
+
+function NOM ( ARGUMENTS ) {
+    ...
+}
+
+/**
+ *   Valeur de retour
+ */
+
+function NOM ( ARGUMENTS ) {
+    ...
+    return EXPR;                // termine la fonction et
+}                               // renvoie la valeur de EXPR
+
+/**
+ *   Appel
+ */
+
+a = NOM ( ARGS );   // si valeur de retour
+NOM ( ARGS );       // sans valeur de retour
+
+</pre>
+                        </div>
+
+                        <div id="codecontainer">
+                            <pre class="prettyprint linenums:1">
+/**
+ *   Définition
+ */
+
+function NOM ( ARGUMENTS ) {
+    // attributs
+    this.ATTR = VALEUR;
+    ...
+    // méthodes / actions
+    this.ACTION = function ( ARGS ) {
+        ...
+    }
+}
+
+NOM.prototype.ACTION = function ( ARGS ) {
+    ...
+}
+
+/**
+ *   Création
+ */
+
+var obj = new NOM ( ARGS );
+
+/**
+ *   Accès aux attributs
+ */
+
+// en dehors de l'objet
+obj.ATTR
+obj[ATTR]
+
+// dans les méthodes de l'objet
+this.ATTR
+
+/**
+ *   Appel des actions
+ */
+
+// en dehors de l'objet
+obj.ACTION ( ARGS );
+
+// dans les méthodes de l'objet
+this.ACTION ( ARGS );
+                            </pre>
+                        </div>
+
+                    <!--</td>
+                    <td>-->
+
+
+
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <div id="footer"></div>
+    </div>
+</body>
+
+</html>

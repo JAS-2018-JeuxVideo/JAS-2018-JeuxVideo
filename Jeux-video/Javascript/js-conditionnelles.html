@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/adapt.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>Bases de programmation</h1>
+        </div>
+        <div id="sideheader"></div>
+        <div id="left_column">
+            <div class="left_column_boxes">
+                <h4>Sessions</h4>
+                <div id="navcontainer">
+                    <ul id="navlist">
+                        <li><a href="/index.html">Accueil</a></li>
+                        <li><a href="/Jeux-video/index.html">Jeux vidéo</a></li>
+                        <li><a href="">Robotique primaire</a></li>
+                        <li><a href="">Robotique collège</a></li>
+                        <li><a href="">Électronique</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="left_column_boxes">
+                <h4>Pages</h4>
+                <div id="navcontainer">
+                    <ul id="navlist">
+                        <li><a href="./index.html">Javascript</a></li>
+                        <ul style="margin-left: 10px;">
+                            <li><a href="./js-exemple1.html">1er exemple</a></li>
+                            <li><a href="./js-variables.html">les variables</a></li>
+                            <li><a href="./js-conditionnelles.html">les conditionnelles</a></li>
+                            <li><a href="./js-tableaux.html">les tableaux</a></li>
+                            <li><a href="./js-boucles.html">les boucles</a></li>
+                            <li><a href="./js-fonctions.html">les fonctions</a></li>
+                            <li><a href="./js-objets.html">les objets</a></li>
+                        </ul>
+                        <li><a href="./Phaser/index.html">Phaser</a></li>
+                        <li><a href="./GameDesign/index.html">Game design</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+            <h3>Les conditionnelles</h3>
+
+            Dans le cas des scripts, des valeurs sont régulièrement affectées à des variables. Cela peut se faire par défaut, dès le chargement du script, soit par la saisie d'utilisateur, soit suite à une modification qui est intervenue à un moment donné. Le propre de la variable étant d'avoir une valeur changeante selon des critères, il sera important de pouvoir tester si la valeur actuelle d'une variable correspond à un besoin et faire poursuivre le script en fonction de cette valeur.<br />
+
+            Il s'agit en quelque sorte d'orientée l'exécution du script dans certaines directions si une condition particulière est remplie. Quelques cas simples de ce principe :
+            <ul>
+                <li>un utilisateur saisi son nom et on vérifie qu'il fait partie d'une liste connue (qu'il est enregistré). Si c'est le cas, on lui donne accès à la page suivante, sinon, on lui propose de recommencer;</li>
+                <li>dans le cas d'une boutique, si la personne dépasse une certaine somme d'achat, on va lui offrir les frais de port;
+                    si c'est le jour de Noël, alors on affiche une image particulière sur la page d'accueil du site.</li>
+            </ul>
+            On pourrait lister comme ça un nombre infini de cas. Une grande partie du travail du développeur est de faire la liste des cas d'utilisations et des valeurs et de faire le programme qui correspondent à ces différentes situations. Les conditions sont certaines la chose la plus incontournable en programmation.
+
+            <p>Si ... Alors ... Sinon ...</p>
+            La solution la plus fréquent est d'utiliser <em>if ... else ...</em> pour faire le test. La condition à évaluer est placée entre parenthèses après le if et les actions à effectuer entre accolades sous la forme :
+            <div id="codecontainer">
+                <pre class="prettyprint linenums">if (condition){
+   actions si la condition est vérifiée
+}
+else
+{
+   actions si la condition est invalidée
+}</pre>
+            </div>
+            La partie <em>sinon</em> est optionnelle et il est possible d'écrire :
+            <div id="codecontainer">
+                <pre class="prettyprint linenums">if (condition){
+   actions si la condition est vérifiée
+}</pre>
+            </div>
+
+            La condition sera explicitée sous la forme d'une comparaison (&lt;, &lt;=, ==, !=, &gt;=, &gt;) ou d'un appel de fonction.
+
+            <div id="codecontainer">
+                <pre class="prettyprint linenums:1">var a, b;
+...
+if ( a &lt; b ) {
+    document.write ( "a est le plus petit" );
+} else if ( a &gt; b ) {
+    document.write ( "b est le plus petit" );
+} else {
+    document.write ( "a et b sont égaux" );
+}</pre>
+            </div>
+
+            <p>selon ... cas ...</p>
+
+            Les instructions switch servent en général à tester si une valeur est vérifier, à agir en conséquence dans ce cas et différemment dans un autre cas. Mais il arrive régulièrement que le nombre de cas augmente t qu'ils soient identifiables. Par exemple, dans le cas d'une boutique en ligne, les envois peuvent être effectués dans divers pays et les frais ports pourront varier. Il est donc important de pouvoir tester la zone géographique vers laquelle le transport doit être fait pour appliquer le bon tarif.<br />
+            Dans ces la condition switch ... case est souvent plus pratique. Elle permet de définir après le switch la valeur à tester. Ensuite chaque valeur possible sera listée et précédée du mot-clé case. Une instruction cas doit se terminer par un : pour débuter le bloc d'instruction spécifique à ce cas.
+
+            <div id="codecontainer">
+                <pre class="prettyprint linenums:1">var pays = "France";
+switch (pays){
+case "France":
+    document.write("envoi pour la France à 5euros");
+    break;
+case "Allemagne":
+    document.write("envoi pour l'Allemagne à 7euros");
+    break;
+default :
+   document.write("envoi pour les autres pays  à 10euros");
+    break;
+}</pre>
+            </div>
+            Attention, si on enlève le <em>break</em> et que la condition est remplie, javascript exécute l'ensemble des autres cas qui suivent. Break sert donc à sortir de la liste des cas après les premier cas validé. On pourrait en effet imaginer qu'une situation corresponde à plusieurs cas. Break évite alors les surprises.
+
+            <p>Associer plusieurs tests et conditions en une</p>
+
+            Il est possible d'un cas corresponde à plusieurs situations. Dans ce cas, les situations peuvent être une intersection des cas (cas se recouvrant ou les deux devant être vraies) ou un choix (dont l'une des deux sera vraie) :
+            <ul>
+                <li>l'opérateur && (et) permet d'associer deux conditions impliquant que la valeur a tester doit corresponde aux deux</li>
+                <li>l'opérateur || (ou) permet de vérifier que la valeur correspond à l'une ou l'autre des situations</li>
+            </ul>
+            par exemple si la Belgique a les mêmes frais e port que la France, nous pourrions écrire :
+
+            <div id="codecontainer">
+                <pre class="prettyprint linenums:1">case "France"||"Belgique":</pre>
+            </div>
+
+            Voici un autre exemple vérifiant qu'un terne est écrit d'une façon ou d'une autre (cela n'est cependant pas la solution optimale pour ce genre d'objectif puisqu'il serait préférable d'harmoniser les casses, si possible).<br />
+
+            Cela fonctionne aussi pour les if
+        </div>
+        <div id="footer"></div>
+    </div>
+</body>
+
+</html>

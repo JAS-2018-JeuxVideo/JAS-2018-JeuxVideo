@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/adapt.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>Bases de programmation</h1>
+        </div>
+        <div id="sideheader"></div>
+        <div id="left_column">
+            <div class="left_column_boxes">
+                <h4>Sessions</h4>
+                <div id="navcontainer">
+                    <ul id="navlist">
+                        <li><a href="/index.html">Accueil</a></li>
+                        <li><a href="/Jeux-video/index.html">Jeux vidéo</a></li>
+                        <li><a href="">Robotique primaire</a></li>
+                        <li><a href="">Robotique collège</a></li>
+                        <li><a href="">Électronique</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="left_column_boxes">
+                <h4>Pages</h4>
+                <div id="navcontainer">
+                    <ul id="navlist">
+                        <li><a href="./index.html">Javascript</a></li>
+                        <ul style="margin-left: 10px;">
+                            <li><a href="./js-exemple1.html">1er exemple</a></li>
+                            <li><a href="./js-variables.html">les variables</a></li>
+                            <li><a href="./js-conditionnelles.html">les conditionnelles</a></li>
+                            <li><a href="./js-tableaux.html">les tableaux</a></li>
+                            <li><a href="./js-boucles.html">les boucles</a></li>
+                            <li><a href="./js-fonctions.html">les fonctions</a></li>
+                            <li><a href="./js-objets.html">les objets</a></li>
+                        </ul>
+                        <li><a href="./Phaser/index.html">Phaser</a></li>
+                        <li><a href="./GameDesign/index.html">Game design</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+            <h3>Les variables</h3>
+            Les variables sont un élément prépondérant de la programmation. On peut les voir comme des boites permettant de stocker une donnée qui est ensuite facilement manipulable : on mémorise du contenu (du texte, des chiffres...) en lui attribuant un nom qui permettra d'y accéder au long de notre programme.
+
+            <p>Déclarer une variable</p>
+            L'une des première étape est de déclarer la variable. Cela consiste globalement à lui attribuer un nom pour pouvoir l'utiliser et la repérer par la suite.<br />
+            Modifiez le fichier <b>test1.js</b> de la façon suivante :
+            <div id="codecontainer">
+                <pre class="prettyprint linenums:1">var b;
+document.write ( a );
+document.write ( b );</pre>
+            </div>
+            Actualisez (rechargez) le fichier dans le navigateur web.<br />
+            <b>Quelques explications :</b>
+            <ul>
+                <li>Ligne 1, on déclare la variable en utilisant le mot clé <b>var</b> et en donnant le nom de la variable.</li>
+                <li>Ligne 2, on affiche le contenu de la variable a (qui n'existe pas).</li>
+                <li>Ligne 3, on affiche le contenu de la variable b (qui existe mais ne contient rien).</li>
+            </ul>
+
+            <p>Nommer une variable</p>
+            Concernant le choix du nom des variables, il est libre, mais ne peut contenir que :
+            <ul>
+                <li>des lettres (majuscules ou minuscules) et en général non accentuées (bannir é,è,à,ç...). Dans le cas de d'utilisation de majuscules et minuscules, il faudra respecter la casse;</li>
+                <li>des chiffres (sauf en début de nom);</li>
+                <li>des traits de soulignement _;</li>
+                <li>le signe dollar $;</li>
+            </ul>
+            En général, on fera débuter le nom de variable par un caractère. Si le nom de variable est composé de plusieurs mots, il est courant de mettre une majuscule à chaque mot de manière à les rendre plus visibles (cette notation est appelée camelCase).<br />
+            Enfin, un certain nombre de mot sont réservés au langage de manière à éviter les erreurs d'interprétation. Des mots comme break, else, delete, this, while, voire même var (voir la liste des mots réservés en annexe).
+
+            <p>Affecter une variable</p>
+
+            L'affectation d'une variable correspond à mettre une valeur dans la boite. Elle se fait simplement par l'utilisation du signe égal.
+
+            Modifiez le fichier <b>test1.js</b> de la façon suivante :
+            <div id="codecontainer">
+                <pre class="prettyprint linenums:1">var b = 7;
+document.write ( b );
+b = b + 7;
+document.write ( b );</pre>
+            </div>
+            Actualisez (rechargez) le fichier dans le navigateur web.<br />
+
+            <p>Types de variables</p>
+
+            Les variables ont un type, c'est-à-dire qu'elles acceptent certains contenus et pas d'autres. Il existe différents types de valeur :
+            <ul>
+                <li>entiers : 1, 4, -5, 0, ...</li>
+                <li>réels : 1.345 -2.5, 4.0, ...</li>
+                <li>booléens : true, false</li>
+                <li>textes : "coucou", 'machin', 'r', ...</li>
+            </ul>
+            Ou encore tableaux, objets, fonctions, ... Le typage d'une variable se fait au moment de l'affectation.
+
+            Dans les exemples précédents :
+
+            <div id="codecontainer"><pre class="prettyprint linenums:1">var b = 7;</pre></div>
+
+            implique que b accepte des nombres entiers;
+
+            <div id="codecontainer"><pre class="prettyprint linenums:1">var c = "bonjour";</pre></div>
+
+            implique que c accepte du texte (des chaînes, string en anglais).
+
+            C'est la présence de guillemets simples ou doubles qui déterminent cela. Ainsi :
+
+            <div id="codecontainer"><pre class="prettyprint linenums:1">var d = "7";</pre></div>
+
+            considère que 7 est un caractère, non un chiffre ou que
+
+            <div id="codecontainer"><pre class="prettyprint linenums:1">var e = b;</pre></div>
+
+            prendra la valeur qui est celle attribuée à b, type inclus, soit un entier.
+
+            <p></p>
+
+            Pour connaître le type d'une variable, il est possible d'utiliser <em>typeof</em>.
+            Modifiez le fichier <b>test1.js</b> de la façon suivante :
+            <div id="codecontainer">
+                <pre class="prettyprint linenums:1">var b = 7;
+document.write ( typeof(b) );
+b = "coucou";
+document.write ( typeof(b) );</pre>
+            </div>
+            Actualisez (rechargez) le fichier dans le navigateur web.<br />
+
+        </div>
+        <div id="footer"></div>
+    </div>
+</body>
+
+</html>

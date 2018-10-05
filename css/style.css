@@ -11,14 +11,16 @@ body {
 /*---------------- Main structure --------------*/
 
 #container {
-	width: 885px;
-	font-size: 1.2em;
+	width: 985px;
+	font-size: 1.4em;
 	background-image: url(images/container.jpg);
+    background-size: 996px 288px;
 	background-repeat: repeat-y;
 }
 
 #header {
 	background-image: url(images/header.jpg);
+    background-size: 996px 288px;
 	height: 288px;
 	margin-top: 0px;
 }
@@ -28,17 +30,18 @@ body {
 	height: 576px;
 	width: 145px;
 	position: absolute;
-	left: 740px;
+	left: 840px;
 	top: 0px;
 }
 
 #left_column {
-	width: 180px;
+	width: 212px;
 	margin-top: 0px;
 	float: left;
 	background-image: url(images/left_column.jpg);
 	background-repeat: no-repeat;
-	margin-left: 70px!important;
+    background-size: 212px;
+	margin-left: 78px!important;
 	margin-left: 35px;
 }
 

@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+    <link rel="stylesheet" type="text/css" href="/css/cheatsheet.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="content">
+            <h3><a title="javascript"></a>Phaser CE</h3>
+
+            <table>
+                <tr>
+                    <td>
+                        <div id="codecontainer">
+                            <pre class="prettyprint linenums:1">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;script src="WHERE_IS_PHASER/phaser.js"&gt;&lt;/script&gt;
+    &lt;title&gt;Phaser test&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        var IDE_HOOK = false;
+        // N° de version de phaser utilisée
+        var VERSION = '2.11.0';
+        /*
+            fonctions de gestion du jeu
+        */
+        function initFunc () {
+            ...
+        }
+        function preloadFunc () {
+            ...
+        }
+        function createFunc () {
+            ...
+        }
+        function updateFunc () {
+            ...
+        }
+        function renderFunc () {
+            ...
+        }
+        // création de l'application dans une zone de
+        // 800 pixels de large et 600 pixels de haut
+        var game = new Phaser.Game(800, 600, Phaser.AUTO, '',
+            {
+                init: initFunc,
+                preload: preloadFunc,
+                create: createFunc,
+                update: updateFunc,
+                render: renderFunc
+            } );
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+/**
+ *  Cycle de vie des fonctions
+ */
+initFunc
+    |
+    |
+preloadFunc
+    |
+    |
+createFunc
+    |____________
+    |           |
+updateFunc      |
+    |           |
+renderFunc      |
+    |           |
+    -------------
+                            </pre>
+                        </div>
+                        <div id="codecontainer">
+                            <pre class="prettyprint linenums:1">
+/***************
+ * Etats du jeu
+ ***************/
+
+/**
+ *  Création
+ */
+var NOM = function (game) {
+    ...
+}
+NOM.prototype = {
+    // fonction d'initialisation de l'état
+    init: function () {
+        ...
+    },
+    // fonction de chargement des données externes
+    preload: function () {
+        ...
+    },
+    // fonction de création des données de l'état
+    create: function () {
+        ...
+    },
+    // fonction de mise à jour de l'état
+    update: function () {
+        ...
+    },
+    // fonction d'affichage de l'état
+    render: function () {
+        ...
+    }
+}
+
+/**
+ *  Ajout
+ */
+game.state.add("NOM",NOM);
+
+/**
+ *  Démarrage
+ */
+game.state.start("NOM");
+
+/**
+ *  Cycle de vie du jeu
+ */
+    boot
+    |
+    |
+    preload
+    |____________
+    |           |
+    menu        |
+    |___________|
+    |           |
+    play        |
+    |           |
+    gameover    |
+    |           |
+    -------------
+                            </pre>
+                        </div>
+                        <div id="codecontainer">
+                            <pre class="prettyprint linenums:1">
+/***************
+ * Chargement des objets
+ ***************/
+/**
+ *  Où se trouvent les données
+ */
+game.load.baseURL = 'ADRESSE';
+game.load.crossOrigin = 'anonymous';
+/**
+ *  Chargement d'une image
+ */
+game.load.image('NOM', 'CHEMIN/FICHIER');
+/**
+ *  Chargement d'une feuille de sprites
+ */
+game.load.spritesheet('NOM', 'CHEMIN/FICHIER', DIMX, DIMY);
+/**
+ *  Ajouter un objet
+ */
+// une image
+var image = game.add.image(X, Y, 'NOM');
+// du texte
+var texte = game.add.text(X, Y, "TEXTE");
+// un sprite
+var player = game.add.sprite(X, Y, 'NOM');
+/**
+ *  Grouper les objets
+ */
+var groupe = game.add.group();
+// ajout d'un objet déjà créé
+groupe.add ( player );
+// ajout d'un nouvel objet
+groupe.create(X, Y, 'NOM');
+
+// déplacement
+player.x = ...;
+player.y = ...;
+// changement d'un texte
+texte.text = "..."
+// détruire un sprite
+player.kill
+/**
+ *  Animer un sprite
+ */
+// créer l'animation
+SPRITE.animations.add('NOM', [IMAGES], IMAGES_PAR_SECONDES, BOUCLE?);
+// jouer une animation
+SPRITE.animations.play ('NOM');
+                            </pre>
+                        </div>
+                        <div id="codecontainer">
+                            <pre class="prettyprint linenums:1">
+/**
+ *  Un peu de physique
+ */
+// Initialisation du système physique
+game.physics.startSystem(Phaser.Physics.ARCADE);
+// Activer la physique pour un sprite
+game.physics.enable(SPRITE, Phaser.Physics.ARCADE);
+
+// Modifier l'angle
+SPRITE.body.angle = ...;
+// Modifier l'accélération
+SPRITE.body.acceleration.set(x, y);
+// Modifier la vitesse
+SPRITE.body.velocity.set(x, y);
+// Rebond
+SPRITE.body.bounce.set(x, y);
+// Drag / Ralentissement
+SPRITE.body.drag.set(x, y);
+// L'élément ne peux pas bouger
+SPRITE.body.immovable = true;
+// Friction
+SPRITE.body.friction.set(x, y);
+// Collision avec le monde
+SPRITE.body.collideWorldBounds = true; // ou false
+                            </pre>
+                        </div>
+                        <div id="codecontainer">
+                            <pre class="prettyprint linenums:1">
+/**
+ *  Collisions
+ */
+// collisions entre deux sprites
+game.physics.arcade.collide(SPRITE1, SPRITE2, FONCTION);
+// collisions entre un sprite et un groupe
+game.physics.arcade.collide(SPRITE, GROUPE, FONCTION);
+// collisions entre au sein d'un groupe
+game.physics.arcade.collide(GROUPE, FONCTION);
+// collisions entre deux groupes
+game.physics.arcade.collide(GROUPE1, GROUPE2, FONCTION);
+/**
+ *  Fonction de gestion d'une collision
+ */
+function FONCTION ( Objet1, Objet2 ) {
+    ...
+}
+                            </pre>
+                        </div>
+                        <div id="codecontainer">
+                            <pre class="prettyprint linenums:1">
+// relacher une touche
+if (game.input.keyboard.justReleased(Phaser.Keyboard.SPACEBAR, DELAI)) {
+    ...
+}
+// les flêches du clavier
+var arrow =  game.input.keyboard.createCursorKeys();
+if (arrow.up.isDown) {
+    ...
+}
+// Le pointeur de la souris
+if (game.input.mousePointer.isDown) {
+    ...
+}
+                            </pre>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

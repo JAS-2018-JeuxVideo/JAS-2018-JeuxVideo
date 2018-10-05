@@ -3,25 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <style>
-        li.L0,
-        li.L1,
-        li.L2,
-        li.L3,
-        li.L5,
-        li.L6,
-        li.L7,
-        li.L8 {
-            list-style-type: decimal !important;
-        }
-
-        pre {
-            padding: 10px;
-        }
-
-    </style>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/adapt.css">
 </head>
 
 <body>
@@ -35,8 +19,11 @@
                 <h4>Sessions</h4>
                 <div id="navcontainer">
                     <ul id="navlist">
-                        <li><a href="../index.html">Accueil</a></li>
-                        <li><a href="../Sessions/programmation-jeux-video.html">Jeux vidéo</a></li>
+                        <li><a href="/index.html">Accueil</a></li>
+                        <li><a href="/Jeux-video/index.html">Jeux vidéo</a></li>
+                        <li><a href="">Robotique primaire</a></li>
+                        <li><a href="">Robotique collège</a></li>
+                        <li><a href="">Électronique</a></li>
                     </ul>
                 </div>
             </div>
@@ -45,19 +32,18 @@
                 <h4>Pages</h4>
                 <div id="navcontainer">
                     <ul id="navlist">
-                        <li><a href="../Sessions/programmation-jeux-video.html">Description</a></li>
+                        <li><a href="./index.html">Javascript</a></li>
                         <ul style="margin-left: 10px;">
-                            <li><a href="../Seances/bases-javascript.html">Javascript</a></li>
-                            <ul style="margin-left: 10px;">
-                                <li><a href="../Seances/js-exemple1.html">1er exemple</a></li>
-                                <li><a href="../Seances/js-variables.html">les variables</a></li>
-                                <li><a href="../Seances/js-conditionnelles.html">les conditionnelles</a></li>
-                                <li><a href="../Seances/js-tableaux.html">les tableaux</a></li>
-                                <li><a href="../Seances/js-boucles.html">les boucles</a></li>
-                                <li><a href="../Seances/js-fonctions.html">les fonctions</a></li>
-                                <li><a href="../Seances/js-objets.html">les objets</a></li>
-                            </ul>
+                            <li><a href="./js-exemple1.html">1er exemple</a></li>
+                            <li><a href="./js-variables.html">les variables</a></li>
+                            <li><a href="./js-conditionnelles.html">les conditionnelles</a></li>
+                            <li><a href="./js-tableaux.html">les tableaux</a></li>
+                            <li><a href="./js-boucles.html">les boucles</a></li>
+                            <li><a href="./js-fonctions.html">les fonctions</a></li>
+                            <li><a href="./js-objets.html">les objets</a></li>
                         </ul>
+                        <li><a href="./Phaser/index.html">Phaser</a></li>
+                        <li><a href="./GameDesign/index.html">Game design</a></li>
                     </ul>
                 </div>
             </div>
@@ -67,15 +53,17 @@
             <h3>Un exemple simple</h3>
             <p>Une première page web</p>
             En utilisant l'éditeur de texte <em>Bracket</em> (ou tout autre éditeur de texte pur, pas Word ou similaire), faire un nouveau fichier dans lequel vous écrirez :
-            <pre><code class="prettyprint linenums:1">&lt;!doctype html&gt;
-        &lt;html&gt;
-        &lt;head&gt;
-            &lt;title&gt;Premieres lignes javascript&lt;/title&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-            &lt;h1&gt;Débuter avec Javascript&lt;/h1&gt;
-        &lt;/body&gt;
-        &lt;/html&gt;</code></pre>
+            <div id="codecontainer">
+                <pre class="prettyprint linenums">&lt;!doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Premieres lignes javascript&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Débuter avec Javascript&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+            </div>
             Sauvegardez (enregistrez) ce fichier sur le bureau en lui donnant le nom <b>test1.html</b><br />
             Ouvrir le fichier avec le navigateur web (double-cliquez sur le fichier sur le bureau).<br />
             <b>Quelques explications :</b>
@@ -89,18 +77,20 @@
             </ul>
             <p>Avec un mini-script</p>
             Modifiez le fichier html de la façon suivante :
-            <pre><code class="prettyprint linenums:1">&lt;!doctype html&gt;
-        &lt;html&gt;
-        &lt;head&gt;
-            &lt;title&gt;Premieres lignes javascript&lt;/title&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-            &lt;h1&gt;Débuter avec Javascript&lt;/h1&gt;
-            &lt;script&gt;
-                document.write("j'affiche un texte dans la page");
-            &lt;/script&gt;
-        &lt;/body&gt;
-        &lt;/html&gt;</code></pre>
+            <div id="codecontainer">
+                <pre class="prettyprint linenums">&lt;!doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Premieres lignes javascript&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Débuter avec Javascript&lt;/h1&gt;
+        &lt;script&gt;
+            document.write("j'affiche un texte dans la page");
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+            </div>
             Actualisez (rechargez) le fichier dans le navigateur web.<br />
             <b>Quelques explications :</b>
             <ul>
@@ -116,19 +106,23 @@
             </ul>
             <p>Avec un mini-script externe</p>
             Créez un nouveau fichier texte contenant :
-            <pre><code class="prettyprint linenums:1">document.write("j'affiche un texte dans la page");</code></pre>
+            <div id="codecontainer">
+                <pre class="prettyprint linenums">document.write("j'affiche un texte dans la page");</pre>
+            </div>
             Sauvegardez (enregistrez) ce fichier sur le bureau en lui donnant le nom <b>test1.js</b><br />
             Modifiez le fichier html de la façon suivante :
-            <pre><code class="prettyprint linenums:1">&lt;!doctype html&gt;
-        &lt;html&gt;
-        &lt;head&gt;
-            &lt;title&gt;Premieres lignes javascript&lt;/title&gt;
-            &lt;script src="test1.js"&gt;&lt;/script&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-            &lt;h1&gt;Débuter avec Javascript&lt;/h1&gt;
-        &lt;/body&gt;
-        &lt;/html&gt;</code></pre>
+            <div id="codecontainer">
+                <pre class="prettyprint linenums">&lt;!doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Premieres lignes javascript&lt;/title&gt;
+        &lt;script src="test1.js"&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Débuter avec Javascript&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+            </div>
             Actualisez (rechargez) le fichier dans le navigateur web.<br />
             <b>Quelques explications :</b>
             <ul>
